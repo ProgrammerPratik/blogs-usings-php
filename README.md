@@ -1,7 +1,7 @@
 # blogs-usings-php
 
 
-how to run
+how to run locally
 
 1. download and install XAMPP server
 2. download the blog folder as zip file from this repositery
