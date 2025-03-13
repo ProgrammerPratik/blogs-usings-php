@@ -50,15 +50,23 @@
                 
                 
                     if($title && $content){
-                        $query = "INSERT INTO blogs(title, content, timestamp_column) VALUES('$title', '$content', '$current_time')";
-                        $result = mysqli_query($conn, $query);
-                        // echo "Posted!";
-
-                        if(!$result){
-                            die('query failed');
+                        $query = $conn->prepare("INSERT INTO blogs(title, content, timestamp_column) VALUES (?, ?, ?)");
+                        $query->bind_param("sss",$title,$content,$current_time);
+                        if($query->execute()){
+                            header("Location: index.php");
+                            exit;
+                        }else{
+                            die('query failed!!!!!');
                         }
-                        header("Location: index.php");
-                        exit;
+                        // $query = "INSERT INTO blogs(title, content, timestamp_column) VALUES('$title', '$content', '$current_time')";
+                        // $result = mysqli_query($conn, $query);
+                        // // echo "Posted!";
+
+                        // if(!$result){
+                        //     die('query failed');
+                        // }
+                        // header("Location: index.php");
+                        // exit;
                     }
                 }
                 ?>
