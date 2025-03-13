@@ -1,4 +1,7 @@
-# blogs-usings-php
+# blogs-using-php
+A very Simple blogging system i made that lets you create and manage blog posts.
+
+![Screenshot 2025-03-13 181946](https://github.com/user-attachments/assets/c316d3fd-02c0-46ad-9b45-bc250b18eafe)
 
 
 how to run locally
